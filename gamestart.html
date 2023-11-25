@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9/11: The Game</title>
+    <link rel="icon" href="./img/airplane.png" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <audio id="bgm" loop>
+      <source src="./audio/bg music.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      var audio = document.getElementById("bgm");
+      function togglePlayPause() {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+    <div onclick="jump()" class="game">
+      <div id="airplane">
+        <img id="plane" src="img/airplane-big.png" alt="paper plane" />
+      </div>
+      <hr />
+      <div id="tower">
+        <img
+          id="building"
+          src="img/leaning tower.png"
+          alt="leaning tower of pisa"
+        />
+      </div>
+      <div class="username">
+        <div id="username">Username: <span id="username-span"></span></div>
+        <div id="score">Score: <span id="score-span">0</span></div>
+      </div>
+      <button onclick="togglePlayPause()" id="playpause">
+        <img id="subwoofer" src="./img/subwoofer.png" alt="subwoofer" />
+      </button>
+      <button onclick="startGame()" id="startButton">START</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

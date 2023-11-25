@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  font-family: "Press Start 2P", Helvetica;
+}
+
+body {
+  background-color: #a9b4c2;
+  margin: 0; /* Reset default margin */
+}
+
+.game {
+  position: relative;
+  max-width: 1400px;
+  width: 80%;
+  height: 600px;
+  margin: 60px auto;
+  border-radius: 50px;
+  background-color: #eef1ef;
+}
+
+#airplane img {
+  width: 5% auto;
+  height: 10%;
+  position: absolute;
+  top: 63%;
+  left: 10%;
+}
+
+.jump {
+  animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    top: 63%;
+  }
+  20% {
+    top: 51%;
+  }
+  40% {
+    top: 39%;
+  }
+  60% {
+    top: 39%;
+  }
+  80% {
+    top: 51%;
+  }
+}
+
+hr {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  align-items: center;
+  color: black;
+  top: 75%;
+}
+
+#building {
+  position: absolute;
+  max-width: 1250px;
+  width: 10% auto;
+  height: 20%;
+  top: 57%;
+  left: 90%;
+
+}
+
+#playpause {
+  border: 0;
+  position: absolute;
+  left: 630px;
+  top: 15px;
+}
+
+@keyframes block {
+  0% {
+    left: 90%;
+  }
+  100% {
+    left: -2%;
+  }
+}
+
+.username {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+
+#username,
+#score {
+  font-size: 1.5em;
+}
+
+#score {
+  text-align: right;
+}
+
+#startButton {
+  position: absolute;
+  left: 560px;
+  top: 510px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .game {
+    position: relative;
+    top: 70px;
+  }
+
+  .username {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 0 2%;
+    box-sizing: border-box;
+  }
+
+  #username,
+  #score {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  #airplane img {
+    position: relative;
+    top: 410px;
+    width: 35px;
+  }
+
+  .jump {
+    animation: jump 0.8s ease;
+  }
+
+  @keyframes jump {
+    0%,
+    100% {
+      top: 410px;
+    }
+    20% {
+      top: 360px;
+    }
+    40% {
+      top: 310px;
+    }
+    60% {
+      top: 310px;
+    }
+    80% {
+      top: 360px;
+    }
+  }
+
+  #building {
+    position: absolute;
+    max-width: 1250px;
+    width: 10% auto;
+    height: 11.7%;
+    top: 65%;
+    left: 80%;
+    
+  }
+
+  @keyframes block {
+    0% {
+      left: 80%;
+    }
+    100% {
+      left: -2%;
+    }
+  }
+
+  #playpause {
+    border: 0;
+    position: relative;
+    left: 270px;
+    top: 620px;
+    width: 18%;
+    border-radius: 15px;
+    background-color: #a9b4c2;
+  }
+
+  #subwoofer {
+    position: inherit;
+    width: 100%;
+    right: 30px;
+    bottom: 540px;
+  }
+
+  #startButton {
+    position: absolute;
+    left: 115px;
+    top: 510px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}

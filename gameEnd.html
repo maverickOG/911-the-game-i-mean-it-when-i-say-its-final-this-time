@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9/11: The Game</title>
+    <link rel="icon" href="./img/airplane.png" />
+    <link rel="stylesheet" href="./style3.css" />
+  </head>
+  <body>
+    <audio id="gameOver" autoplay>
+      <source src="./audio/game over.mp3" type="audio/mp3" />
+    </audio>
+    <div id="container">
+      <div class="score">Score: <span id="score"></span></div>
+      <a href="gamestart.html"
+        ><img id="restart" src="./img/restart.png" alt="restart icon"
+      /></a>
+      <a href="index.html"
+        ><img id="cancel" src="./img/cancel.png" alt="cancel icon"
+      /></a>
+      <div id="message">
+        <p></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let score = localStorage.getItem("score");
+    document.getElementById("score").innerText = score;
+
+    var resultMessage = document.querySelector("p");
+    var win = [
+      "GG, WP! Keep it up!",
+      "GG! Your skills are unmatched.",
+      "Stay hard.",
+    ];
+    var lost = [
+      "WHO IS GOING TO CARRY THE BOATS? AND THE LOGS.",
+      "Try not to crash into the building next time, or it'll be the next WTC.",
+      "You can do better, just try harder next time.",
+    ];
+    if (score >= 3000) {
+      resultMessage.textContent = getRandomPhrase(win);
+    } else {
+      resultMessage.textContent = getRandomPhrase(lost);
+    }
+    function getRandomPhrase(array) {
+      var randomIndex = Math.floor(Math.random() * array.length);
+      return array[randomIndex];
+    }
+  </script>
+</html>
